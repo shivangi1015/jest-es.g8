@@ -10,6 +10,7 @@ import io.searchbox.client.JestClient
 import io.searchbox.core._
 import org.elasticsearch.index.query.QueryBuilders
 import org.elasticsearch.search.builder.SearchSourceBuilder
+import play.api.libs.json.Json
 
 /**
   * Performs Create, Read, Update and Delete operation on ES

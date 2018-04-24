@@ -29,7 +29,7 @@ class ElasticSearchOperationsSpec extends ElasticSearchOperations with WordSpecL
     "test whether Elastic Search Index is created or not" in {
       when(client.execute(ArgumentMatchers.anyObject())) thenReturn mockDocumentResult
       val result = insertInES(eSDocument1)
-      assert(result.inserted)
+      assert(result.done)
     }
 
     "test whether search query is processed by elastic search or not" in {
@@ -44,13 +44,13 @@ class ElasticSearchOperationsSpec extends ElasticSearchOperations with WordSpecL
       val emp = Employee("Shivangi Gupta", "opay", "1")
       val eSDocument5 = ESDocument[Employee]("company", "employee", emp.id, emp)
       val updationResponse = update(eSDocument5, "company", "employee")
-      assert(updationResponse.inserted)
+      assert(updationResponse.done)
     }
 
     "test whether deletion is working fine or not" in {
       when(client.execute(ArgumentMatchers.anyObject())) thenReturn mockDocumentResult
       val deleteResult = delete(index)
-      assert(deleteResult.inserted)
+      assert(deleteResult.done)
     }
 
   }
