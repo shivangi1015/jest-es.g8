@@ -1,0 +1,14 @@
+*.class
+*.log
+.idea/
+.idea/*
+*/.idea/*
+project/boot/*
+project/plugins/project/*
+project/plugins/target/*
+project/target/
+*/target/*
+target/*
+classpath
+.project
+.target/
